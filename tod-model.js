@@ -1,0 +1,17 @@
+var new_item = document.getElementById('input');
+var list = document.getElementById('list-items');
+ var item_status = document.getElementsByClassName('new_complete_button_class');
+  var active_filter = document.getElementById('filter-active');
+  var complete_filter = document.getElementById('filter-completed');
+  var all_filter = document.getElementById('filter-all');
+  var add_bottun = document.getElementById('addbutton');
+  var edit_task = document.getElementsByClassName('new_input_edit');
+  var edit_submit_task = document.getElementsByClassName('new_submit_edit');
+  var new_line_task = document.getElementsByClassName('newLineClass');
+  var new_line = [];
+var new_close_button = [];
+var new_complet_button = [];
+var new_edit_button = [];
+var new_submit = [];
+var new_input = [];
+var i = 0;
