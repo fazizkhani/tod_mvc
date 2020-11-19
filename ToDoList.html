@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html id = 'todo-all'>
+
+<head>
+    <link rel="stylesheet" href="ToDoList-css.css">
+    <title>fatemeh</title>
+</head>
+
+<body>
+   
+    <div id="up-part" class="up-part">
+        <h1 style="color:rgb(11, 11, 17)">
+            TO DO List
+        </h1>
+
+        <input type="text" id="input" placeholder="input...">
+        <span  id="addbutton" >add</span>
+        <span type='submit' id="choose-button" class = "updownload" > chosse file</span>
+        <span type='submit' id="upload-button" class = "updownload"> upload</span>
+        <span type='submit' id = "download-button" class = "updownload">download</span>
+    </div>
+    <div id='filters'>
+        <span id= 'filter-all'>All</span>
+        <span id= 'filter-active'>Active</span>
+        <span id= 'filter-completed'>Completed</span>
+    </div>
+    <div id="list-part" class="list-part">
+        <ul id="list-items">
+          
+        </ul>
+    </div>
+    <script type="text/javascript" src="tod-model.js"></script>
+    <script type="text/javascript" src="todo-view.js"></script>
+    <script type="text/javascript" src="todo-controler.js"></script>
+
+</body>
