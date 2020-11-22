@@ -102,5 +102,46 @@ i = i+1;
       }
     }
     
-    window.localStorage.setItem('todo', document.getElementsByTagName('li').innerhtml);
-    window.localStorage.getItem('todo');
+var data = (function () {
+	var key = 'state';
+	return {
+		getItems: getItems1,
+		setItems: setItems1
+	};
+
+	function getItems1() {
+		var value = localStorage.getItem(key);
+		if (!value) return null;
+		return value;
+	};
+
+	function setItems1(value) {
+		!value && (value = {});
+		localStorage.setItem(key, value);
+	};
+}());
+    upload_icon.onclick = function () {
+      var myData = data.getItems1();
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          alert('upload done successfully.');
+        }
+      }
+      xhttp.open('POST', "write", true);
+      xhttp.setRequestHeader('Content-Type', 'application/json');
+      xhttp.send(myData);
+    }
+    
+    download_icon.onclick = function () {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open('GET', "read", true);
+      xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          var myData = xhttp.responseText;
+          data.setItems1(myData);
+         
+        }
+      };
+      xhttp.send();
+    }
